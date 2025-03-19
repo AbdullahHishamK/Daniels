@@ -410,5 +410,134 @@ footer {
     color: #fff;
     font-weight: bold;
   }
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-5, .col-md-7 {
+    padding: 15px;
+}
+
+.header, .section, .footer {
+    padding: 20px 0;
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive typography */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    line-height: 1.6;
+    margin: 0;
+    font-size: 15px;
+    color: #748182;
+}
+
+/* Responsive progress bars */
+.progress-bar {
+    border-radius: 5px;
+    padding: 5px 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar .percentage {
+    margin-left: auto;
+    padding-left: 10px;
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Media queries */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .progress-bar .percentage {
+        right: 8px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .col-md-5, .col-md-7 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .progress-bar .percentage {
+        right: 5px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .progress-bar {
+        padding: 5px;
+    }
+
+    .progress-bar .percentage {
+        right: 5px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .progress-bar {
+        padding: 3px;
+    }
+
+    .progress-bar .percentage {
+        right: 3px;
+        font-size: 0.65rem;
+    }
+
+    .home-content h1 {
+        font-size: 40px;
+        line-height: 45px;
+    }
+
+    .home-content h2 {
+        font-size: 50px;
+        line-height: 60px;
+    }
+
+    .sec2 .item {
+        padding: 30px 10px;
+    }
+
+    .section-head h3 {
+        font-size: 30px;
+    }
+}
+
+
   
  
