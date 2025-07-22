@@ -30,7 +30,7 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary shadow fixed-top">
         <div class="container">
-          <a class="navbar-brand fw-bold" href="#">DANIELS</a>
+          <a class="navbar-brand fw-bold" href="#home">DANIELS</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -45,25 +45,30 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="#home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">about</a>
+                <a class="nav-link" href="#about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">services</a>
+                <a class="nav-link" href="#services">Services</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">works</a>
+                <a class="nav-link" href="#portfolio">Works</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">clients</a>
+                <a class="nav-link" href="#clients">Clients</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">team</a>
+                <a class="nav-link" href="#team">Team</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">contact</a>
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+              <li class="nav-item d-flex align-items-center ms-2">
+                <a class="nav-link" href="#" id="darkModeToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+                  <i class="fa-regular fa-moon" id="darkModeIcon"></i>
+                </a>
               </li>
             </ul>
           </div>
@@ -85,16 +90,37 @@
           I Am Larry Daniels <span id="changing-role">Developer</span>
         </h2>
 
-        <script>
-          const roles = ["Developer", "Designer"];
-          let roleIndex = 0;
-          const roleElement = document.getElementById("changing-role");
+          <script>
+            const roles = ["Developer", "Designer"];
+            let roleIndex = 0;
+            const roleElement = document.getElementById("changing-role");
 
-          setInterval(() => {
-            roleIndex = (roleIndex + 1) % roles.length;
-            roleElement.textContent = roles[roleIndex];
-          }, 4000);
-        </script>
+            let typingSpeed = 100; // ms per character
+            let deletingSpeed = 60; // ms per character
+            let delayBetweenWords = 1000; // ms before deleting
+
+            function typeWord(word, i = 0) {
+              if (i <= word.length) {
+                roleElement.textContent = word.slice(0, i);
+                setTimeout(() => typeWord(word, i + 1), typingSpeed);
+              } else {
+                setTimeout(() => deleteWord(word), delayBetweenWords);
+              }
+            }
+
+            function deleteWord(word, i = word.length) {
+              if (i >= 0) {
+                roleElement.textContent = word.slice(0, i);
+                setTimeout(() => deleteWord(word, i - 1), deletingSpeed);
+              } else {
+                roleIndex = (roleIndex + 1) % roles.length;
+                setTimeout(() => typeWord(roles[roleIndex]), typingSpeed);
+              }
+            }
+
+            // Start the effect
+            typeWord(roles[roleIndex]);
+          </script>
 
         <div class="social-icons">
           <i class="fa-brands fa-facebook-f black"></i>
@@ -106,12 +132,12 @@
       </div>
     </section>
 
-    <section class="sec1 p-lg-5 pb-70">
+    <section class="sec1 p-lg-5 pb-70" id="about">
       <div class="container">
         <div class="row">
           <div class="col-md-5">
             <div class="img1 mb-30">
-              <img src="imgs/imgs/hero.jpg" alt="" />
+              <img src="imgs/imgs/hero.jpg" alt="Portrait of Jerry Daniels" />
             </div>
           </div>
 
@@ -185,7 +211,7 @@
       </div>
     </section>
 
-    <section class="sec2 sec2-padding text-center" data-scroll-index="2">
+    <section class="sec2 sec2-padding text-center" data-scroll-index="2" id="services">
       <div class="container">
         <div class="section-head">
           <h3>Services.</h3>
@@ -337,7 +363,7 @@
             <div class="row gy-4">
               <div class="col-lg-4 col-md-6 overflow-hidden parent">
                 <div class="bg-info position-relative">
-                  <img src="imgs/imgs/portfolio/1.jpg" alt="charger" />
+                  <img src="imgs/imgs/portfolio/1.jpg" alt="Portfolio project 1" />
                   <div
                     class="bg-light layer3 position-absolute d-flex flex-column justify-content-center align-items-center"
                   >
@@ -351,7 +377,7 @@
               </div>
               <div class="col-lg-4 col-md-6 overflow-hidden parent">
                 <div class="bg-info position-relative">
-                  <img src="imgs/imgs/portfolio/2.jpg" alt="charger" />
+                  <img src="imgs/imgs/portfolio/2.jpg" alt="Portfolio project 2" />
                   <div
                     class="bg-light layer3 position-absolute d-flex flex-column justify-content-center align-items-center"
                   >
@@ -365,7 +391,7 @@
               </div>
               <div class="col-lg-4 col-md-6 overflow-hidden parent">
                 <div class="bg-info position-relative">
-                  <img src="imgs/imgs/portfolio/3.jpg" alt="charger" />
+                  <img src="imgs/imgs/portfolio/3.jpg" alt="Portfolio project 3" />
                   <div
                     class="bg-light layer3 position-absolute d-flex flex-column justify-content-center align-items-center"
                   >
@@ -379,7 +405,7 @@
               </div>
               <div class="col-lg-4 col-md-6 overflow-hidden parent">
                 <div class="bg-info position-relative">
-                  <img src="imgs/imgs/portfolio/4.jpg" alt="charger" />
+                  <img src="imgs/imgs/portfolio/4.jpg" alt="Portfolio project 4" />
                   <div
                     class="bg-light layer3 position-absolute d-flex flex-column justify-content-center align-items-center"
                   >
@@ -393,7 +419,7 @@
               </div>
               <div class="col-lg-4 col-md-6 overflow-hidden parent">
                 <div class="bg-info position-relative">
-                  <img src="imgs/imgs/portfolio/5.jpg" alt="charger" />
+                  <img src="imgs/imgs/portfolio/5.jpg" alt="Portfolio project 5" />
                   <div
                     class="bg-light layer3 position-absolute d-flex flex-column justify-content-center align-items-center"
                   >
@@ -407,7 +433,7 @@
               </div>
               <div class="col-lg-4 col-md-6 overflow-hidden parent">
                 <div class="bg-info position-relative">
-                  <img src="imgs/imgs/portfolio/6.jpg" alt="charger" />
+                  <img src="imgs/imgs/portfolio/6.jpg" alt="Portfolio project 6" />
                   <div
                     class="bg-light layer3 position-absolute d-flex flex-column justify-content-center align-items-center"
                   >
@@ -433,7 +459,7 @@
             <div class="row gy-4">
               <div class="col-lg-4 col-md-6 overflow-hidden parent">
                 <div class="bg-info position-relative">
-                  <img src="imgs/imgs/portfolio/3.jpg" alt="charger" />
+                  <img src="imgs/imgs/portfolio/3.jpg" alt="Portfolio project 3" />
                   <div
                     class="bg-light layer3 position-absolute d-flex flex-column justify-content-center align-items-center"
                   >
@@ -447,7 +473,7 @@
               </div>
               <div class="col-lg-4 col-md-6 overflow-hidden parent">
                 <div class="bg-info position-relative">
-                  <img src="imgs/imgs/portfolio/6.jpg" alt="charger" />
+                  <img src="imgs/imgs/portfolio/6.jpg" alt="Portfolio project 6" />
                   <div
                     class="bg-light layer3 position-absolute d-flex flex-column justify-content-center align-items-center"
                   >
@@ -473,7 +499,7 @@
             <div class="row gy-4">
               <div class="col-lg-4 col-md-6 overflow-hidden parent">
                 <div class="bg-info position-relative">
-                  <img src="imgs/imgs/portfolio/2.jpg" alt="charger" />
+                  <img src="imgs/imgs/portfolio/2.jpg" alt="Portfolio project 2" />
                   <div
                     class="bg-light layer3 position-absolute d-flex flex-column justify-content-center align-items-center"
                   >
@@ -487,7 +513,7 @@
               </div>
               <div class="col-lg-4 col-md-6 overflow-hidden parent">
                 <div class="bg-info position-relative">
-                  <img src="imgs/imgs/portfolio/5.jpg" alt="charger" />
+                  <img src="imgs/imgs/portfolio/5.jpg" alt="Portfolio project 5" />
                   <div
                     class="bg-light layer3 position-absolute d-flex flex-column justify-content-center align-items-center"
                   >
@@ -514,7 +540,7 @@
           <div class="row gy-4">
             <div class="col-lg-4 col-md-6 overflow-hidden parent">
               <div class="bg-info position-relative">
-                <img src="imgs/imgs/portfolio/1.jpg" alt="charger" />
+                <img src="imgs/imgs/portfolio/1.jpg" alt="Portfolio project 1" />
                 <div
                   class="bg-light layer3 position-absolute d-flex flex-column justify-content-center align-items-center"
                 >
@@ -528,7 +554,7 @@
             </div>
             <div class="col-lg-4 col-md-6 overflow-hidden parent">
               <div class="bg-info position-relative">
-                <img src="imgs/imgs/portfolio/3.jpg" alt="charger" />
+                <img src="imgs/imgs/portfolio/3.jpg" alt="Portfolio project 3" />
                 <div
                   class="bg-light layer3 position-absolute d-flex flex-column justify-content-center align-items-center"
                 >
@@ -542,7 +568,7 @@
             </div>
             <div class="col-lg-4 col-md-6 overflow-hidden parent">
               <div class="bg-info position-relative">
-                <img src="imgs/imgs/portfolio/5.jpg" alt="charger" />
+                <img src="imgs/imgs/portfolio/5.jpg" alt="Portfolio project 5" />
                 <div
                   class="bg-light layer3 position-absolute d-flex flex-column justify-content-center align-items-center"
                 >
@@ -561,6 +587,7 @@
 
     <section
       class="testmonial container-fluid position-relative d-flex flex-column justify-content-center vh-50"
+      id="clients"
     >
       <div class="container">
         <div class="section-head m-lg-4">
@@ -595,7 +622,7 @@
             <img
               src="imgs/imgs/1_New1.jpg"
               class="d-block rounded-circle m-auto"
-              alt="..."
+              alt="Testimonial: Alex Smith"
             />
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est illo
@@ -699,7 +726,7 @@
       </div>
     </div>
 
-    <section class="blog section-padding" data-scroll-index="5">
+    <section class="blog section-padding" data-scroll-index="5" id="team">
       <div class="container">
         <div class="row">
           <div class="section-head m-xl-5">
@@ -712,7 +739,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">
                   <div class="team1 img-rounded">
                     <div class="img-3">
-                      <img src="imgs/imgs/1.jpg" alt="" />
+                      <img src="imgs/imgs/1.jpg" alt="Team member John Doe" />
                       <div class="layer-4">
                         <ul class="list">
                           <li>
@@ -745,7 +772,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">
                   <div class="team1 img-rounded">
                     <div class="img-3">
-                      <img src="imgs/imgs/2.jpg" alt="" />
+                      <img src="imgs/imgs/2.jpg" alt="Team member John Doe" />
                       <div class="layer-4">
                         <ul class="list">
                           <li>
@@ -778,7 +805,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">
                   <div class="team1 img-rounded">
                     <div class="img-3">
-                      <img src="imgs/imgs/1.jpg" alt="" />
+                      <img src="imgs/imgs/1.jpg" alt="Team member John Doe" />
                       <div class="layer-4">
                         <ul class="list">
                           <li>
@@ -820,7 +847,7 @@
       <!-- /container -->
     </section>
 
-    <section class="contact section-padding m-5" data-scroll-index="6">
+    <section class="contact section-padding m-5" data-scroll-index="6" id="contact">
       <div class="container">
         <div class="row">
           <div class="section-head">
@@ -873,6 +900,7 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
+                      <label for="form_name">Name</label>
                       <input
                         id="form_name"
                         type="text"
@@ -885,6 +913,7 @@
 
                   <div class="col-md-6">
                     <div class="form-group">
+                      <label for="form_email">Email</label>
                       <input
                         id="form_email"
                         type="email"
@@ -898,6 +927,7 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
+                      <label for="form_message">Message</label>
                       <textarea
                         id="form_message"
                         name="message"
@@ -934,5 +964,24 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-  </body>
+    <script>
+      // Dark mode icon toggle
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const darkModeIcon = document.getElementById('darkModeIcon');
+      let isDark = false;
+      darkModeToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        isDark = !isDark;
+        if (isDark) {
+          darkModeIcon.classList.remove('fa-moon');
+          darkModeIcon.classList.add('fa-sun');
+          document.body.classList.add('dark-mode');
+        } else {
+          darkModeIcon.classList.remove('fa-sun');
+          darkModeIcon.classList.add('fa-moon');
+          document.body.classList.remove('dark-mode');
+        }
+      });
+    </script>
+  </body> 
 </html>
